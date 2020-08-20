@@ -1,20 +1,19 @@
+# Reddit-Video-Downloader
+GIFs and Images are easy to save from Reddit, videos on the other hand. This script downloads the video and provides you with the URL for the video. 
+In this script I tried practicing user input protection (No matter what you type in, the script should never crash) so if you manage to crash it, please tell me how :)
 
 <strong>Required</strong><br>
 Python 2.7-3.8<br>
-Pygame 2.0.0.dev6<br>
+Requests 2.24.0<br>
 
 To use this script use the following commands:
 ```
-pip install pygame
+pip install requests
 
 git clone <URL>
 cd <REPO NAME>
-python main.py
+python main.py <URL_TO_POST_WITH_VIDEO>
 ```
 
-If you do not want to install any packages, you can also use repl.it to run PyGame scripts!
-
-Please create issues to tell me what you like/don't like about this project.
-If I missed anything please create an issue too!
 
  - Hamolicious
