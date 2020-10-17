@@ -6,20 +6,3 @@ In this script I tried practising user input protection (No matter what you type
 
 *The artifacts are caused by my Video to GIF software, the script will not introduce artifacts to the video*
 
-<br>
-
-<strong>Required</strong><br>
-Python 2.7-3.8<br>
-Requests 2.24.0<br>
-
-To use this script use the following commands:
-```
-pip install requests
-
-git clone <URL>
-cd <REPO NAME>
-python main.py <URL_TO_POST_WITH_VIDEO>
-```
-
-
- - Hamolicious
