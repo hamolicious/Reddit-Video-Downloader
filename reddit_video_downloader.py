@@ -1,6 +1,6 @@
-from requests import get, exceptions
-import os ; os.system('cls')
 import json
+import os ; os.system('cls')
+from requests import get, exceptions
 from sys import argv as command_line_args
 
 def get_user_agent():
@@ -47,8 +47,23 @@ def get_video(url):
         r = get(video_url).content
         with open('download.mp4', 'wb') as file:
             file.write(r)
+        get_audio(json_data)
+        stitch_video()
     except TypeError:
         say('Only posts with videos are supported', 'error')
+
+def get_audio(json_data):
+    try:
+        audio_url = json_data['secure_media']['reddit_video']['hls_url'].split('HLS')[0]
+        audio_url += 'HLS_AUDIO_160_K.aac'
+        r = get(audio_url).content
+        with open('audio.aac', 'wb') as file:
+            file.write(r)
+    except TypeError:
+        say('No audio found.', 'error')
+
+def stitch_video():
+    os.system("ffmpeg -i download.mp4 -i audio.aac -map 0 -map 1:a -c:v copy -shortest output.mp4")
 
 def help_page():
     print(f"""
