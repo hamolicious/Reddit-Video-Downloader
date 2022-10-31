@@ -1,5 +1,5 @@
 import json
-import os ; os.system('cls')
+import os
 from requests import get, exceptions
 from sys import argv as command_line_args
 
