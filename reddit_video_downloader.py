@@ -28,8 +28,7 @@ def get_video(url):
     if 'error' in r.text:
         if r.status_code == 404:
             say('Post not found', 'error')
-
-        quit()
+            quit()
 
     try:
         json_data = json.loads(r.text)[0]['data']['children'][0]['data']
